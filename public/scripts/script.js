@@ -273,14 +273,14 @@ imgLib.addEventListener("click",function(){
            let element= sbox3.children[i];
            element.children[1].classList.add("hidden");
         }
-        sbox3.classList.remove("h-80");
-        sbox3.classList.add("h-96");
+        sbox3.classList.remove("h-[450px]");
+        sbox3.classList.add("h-[500px]");
         sbox3.classList.remove("w-96");
         sbox3.classList.add("w-full");
         box2232.classList.remove("w-[1060px]");
         box2242.classList.remove("w-[1060px]");
-        box2232.classList.add("w-[1300px]");
-        box2242.classList.add("w-[1300px]");
+        box2232.classList.add("w-[1355px]");
+        box2242.classList.add("w-[1355px]");
     }
     else{
         for(let i=1;i<3;++i){
@@ -295,14 +295,14 @@ imgLib.addEventListener("click",function(){
            let element= sbox3.children[i];
            element.children[1].classList.remove("hidden");
         }
-        sbox3.classList.remove("h-96");
-        sbox3.classList.add("h-80");
+        sbox3.classList.remove("h-[500px]");
+        sbox3.classList.add("h-[450px]");
         sbox3.classList.remove("w-full");
         sbox3.classList.add("w-96");
         box2232.classList.add("w-[1060px]");
         box2242.classList.add("w-[1060px]");
-        box2232.classList.remove("w-[1300px]");
-        box2242.classList.remove("w-[1300px]");
+        box2232.classList.remove("w-[1355px]");
+        box2242.classList.remove("w-[1355px]");
     }
 })
 
