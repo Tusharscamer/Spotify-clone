@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link href="./styles/output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a835322af7.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-black">
+
+
+    <div class="box1 mt-2 flex">
+        <div class=" w-12 ">
+            <img class="" src="./img/logo.png" alt="" />
+        </div>
+        <div class="w-12 flex items-center justify-center ml-96 rounded-full bg-slate-800">
+            <img class="" id="homelogo" src="./img/homelogo.png" alt="" />
+        </div>
+        <i d="searchlogo" class="cursor-pointer text-white fa-solid fa-magnifying-glass relative mt-5 left-8"></i>
+        <input class="searchbutton rounded-full p-2 ps-14 w-96 text-xl bg-gray-900 text-white" type="search"
+            placeholder="What do you want to play ?" id="" />
+        <div class="flex p-3 items-center justify-center rounded-full bg-gray-900 space-x-1 ml-96">
+            <i class="text-white fa-solid fa-download"></i>
+            <p class="text-white font-bold">Install App</p>
+        </div>
+        <i class="rounded-full ml-16 bg-gray-900 p-5 text-white fa-solid fa-user"></i>
+    </div>
+
+
+    <div class="box2 flex space-x-4 mt-8">
+
+        <div class="box21 bg-gray-900 p-3">
+
+            <div class="box211 flex ml-2 p-2">
+                <div class="flex justify-center items-center space-x-2">
+                    <img class="imgLib cursor-pointer w-12" src="./img/library.png" alt="" />
+                    <p class="text-white text-xl">Your Library</p>
+                </div>
+                <div class="ml-20">
+                    <button class="buttonPlusLib " type="button  ">
+                        <i class="pt-3 text-3xl text-slate-400 fa-solid fa-plus"></i>
+                    </button>
+                    <div class="createPlaylistLib absolute z-[9999] inset-0 translate-x-16 translate-y-44 transform bg-slate-900 shadow-2xl p-1 w-64 h-28  text-white hidden">
+                       <ul class="space-y-2">
+                         <li>
+                            <div class="flex justify-start items-start space-x-2 bg-slate-800 hover:bg-slate-700 cursor-pointer  w-60 p-2">
+                                <div class="">
+                                    <i class=" fa-solid fa-music"></i>
+                                </div>
+                                <div>
+                                    <span>Create a New Playlist</span>
+                                </div>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="flex justify-start items-start space-x-2 bg-slate-800  hover:bg-slate-700 cursor-pointer w-60 p-2">
+                                <div class="">
+                                    <i class="fa-regular fa-folder"></i>
+                                </div>
+                                <div>
+                                    <span>Create a New playlist Folder</span>
+                                </div>
+                            </div>
+                         </li>
+                       </ul>
+                    </div>
+                </div>
+                <button type="button">
+                    <i class="ml-5 pt-3 text-3xl text-slate-400 fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="box212 flex mt-8 relative space-x-2">
+                <button class="buttonCrossLib hidden">
+                    <i class="text-white bg-zinc-700 p-2 rounded-full fa-solid fa-xmark"></i>
+                </button>
+                <div class="playlistLib text-white  rounded-full text-base bg-zinc-700 p-2 cursor-pointer">
+                  <p>  playlist</p>
+                </div>
+                <div class="artisteLib text-white text-base bg-zinc-700 rounded-full p-2 cursor-pointer">
+                    <p>artiste</p>
+                </div>
+                <div class="byyouLib text-white text-base bg-zinc-700 rounded-full p-2 hidden">
+                   <p> By you</p>
+                </div>
+            </div>
+            <div class="Library mt-5 overflow-y-scroll scrollbar scrollbar-thumb-slate-600 scrollbar-track-gray-800 w-96 h-80 space-y-2">
+                <div class="LibTopBar flex w-full">
+                    <div class="flex">
+                        <i id="searchLibLogo"  class="text-xl cursor-pointer text-slate-400 fa-solid fa-magnifying-glass mt-4 z-10 ml-5"></i>
+                        <input class="searchLibInput searchbutton rounded-full relative ps-10 right-9  text-xl bg-gray-900 text-white hidden -z-0" type="search" placeholder="Search on Your Library" id="" />
+                    </div>
+                    <div class="Libcontainer flex space-x-2 ml-48 justify-center items-center">
+                       <div class="">
+                         <p class="recentLib text-slate-400 text-xl cursor-pointer"> Recents</p>
+                       </div>
+                        <div class="w-12">
+                            <img class="cursor-pointer" src="./img/recents.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box22 bg-gray-900 p-4 space-y-4">
+            <div class="box221 flex space-x-4">
+                <div class="all text-black bg-white p-2 cursor-pointer rounded-full">
+                    All
+                </div>
+                <div class="music text-white bg-gray-700 p-2 cursor-pointer rounded-full">
+                    Music
+                </div>
+                <div class="podcasts text-white bg-gray-700 p-2 cursor-pointer rounded-full">
+                    Podcasts
+                </div>
+            </div>
+            <div class="overflow-y-scroll scrollbar scrollbar-thumb-slate-600 scrollbar-track-gray-800 space-y-2 h-96">
+                <div class="box222 space-y-2  ">
+                
+                </div>
+                <div class="box223 space-y-2">
+                    <div class="box2231">
+                        <h1 class="hover:underline text-2xl font-bold text-white">Made for The_Tushar_dhakad</h1>
+                    </div>
+                    <div class="box2232 flex overflow-x-scroll scrollbar scrollbar-none w-[1060px] space-x-4">
+    
+                    </div>
+    
+                </div>
+                <div class="box224 space-y-2">
+                    <div class="box2241">
+                        <h1 class="hover:underline text-2xl font-bold text-white">Your top Mixes</h1>
+                    </div>
+                    <div class="box2242 flex overflow-x-scroll scrollbar scrollbar-none w-[1060px] space-x-4">
+    
+                    </div>
+    
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="text-white w-full justify-center items-center bg-green-600">
+        Hello there
+    </div>
+
+
+    <script src="./scripts/All_img.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
