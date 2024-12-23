@@ -318,3 +318,15 @@ buttonPlusLib.addEventListener("click",function(){
         createPlaylistLib.classList.add("hidden");
     }
 });
+
+//
+let ProfileLogo=document.querySelector(".ProfileLogo");
+let UserOptions=document.querySelector(".UserOptions");
+ProfileLogo.addEventListener("click",function(){
+    if(UserOptions.classList.contains("hidden")){
+        UserOptions.classList.remove("hidden");
+    }
+    else{
+        UserOptions.classList.add("hidden");
+    }
+})
