@@ -126,6 +126,7 @@ function appendPlaylist(element){
 
    // mainbox Styeling
    Pdiv.classList.add("flex","space-x-2","p-2","w-full","hover:bg-slate-700");
+   Pdiv.id=element.playlistName.toLowerCase()
    return Pdiv;
 }
 
@@ -156,7 +157,8 @@ function appendAritist(element){
     // insert to main container 
     Adiv.appendChild(divC1);
     Adiv.appendChild(divC2);
-    Adiv.classList.add("flex","space-x-2","p-2","w-full","hover:bg-slate-700")
+    Adiv.classList.add("flex","space-x-2","p-2","w-full","hover:bg-slate-700",)
+    Adiv.id=element.artistName.toLowerCase()
     return Adiv;
 }
 
@@ -318,6 +320,54 @@ buttonPlusLib.addEventListener("click",function(){
         createPlaylistLib.classList.add("hidden");
     }
 });
+
+// search button for library section makeing that functional 
+searchLibInput.addEventListener("input",function(){
+    let value = searchLibInput.value.trim().toLowerCase();
+    let count=0;
+    console.log(value);
+    artistLib_container.forEach(element=>{
+        let e=element.artistName.toLowerCase()
+        let make_hidden=document.getElementById(`${e}`)
+        if(!( e.includes(value))){
+            make_hidden.classList.add("hidden")
+            ++count;
+        } 
+        else{
+            if(make_hidden.classList.contains("hidden")){
+                make_hidden.classList.remove("hidden")
+                --count;
+            }
+        }
+    })
+    playlistLib_container.forEach(element=>{
+        let e=element.playlistName.toLowerCase()
+        let make_hid=document.getElementById(`${e}`)
+        if(!(e.includes(value))){
+            make_hid.classList.add("hidden")
+            ++count;
+        }
+        else{
+            if(make_hid.classList.contains("hidden")){
+                make_hid.classList.remove("hidden")
+                --count;
+            }
+        }
+    })
+    if(value===""){
+        for(let i=0;i<artistLib_container_size+playlistLib_container_size+1;++i){
+           let element=Libraray.children[i]
+           if(element.classList.contains("hidden")){
+            element.classList.remove("hidden")
+          }
+        }
+        if(!(ele.classList.contains("hidden"))){
+            ele.classList.add("hidden")
+        }
+     }
+})
+
+
 
 //
 let ProfileLogo=document.querySelector(".ProfileLogo");
