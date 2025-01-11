@@ -182,7 +182,9 @@ const buttoncrossLib=document.querySelector(".buttonCrossLib");
 const playlistLib=document.querySelector(".playlistLib");
 const artisteLib=document.querySelector(".artisteLib");
 const byyouLib=document.querySelector(".byyouLib");
-playlistLib.addEventListener("click",function(){
+
+// creating event listener playlist button on library section
+const playlistLibClickEvent = function(){
     buttoncrossLib.classList.remove("hidden");
     artisteLib.classList.add("hidden");
     byyouLib.classList.remove("hidden");
@@ -194,8 +196,12 @@ playlistLib.addEventListener("click",function(){
     for(let i=0;i<artistLib_container_size;++i){
         Libraray.removeChild(Libraray.lastChild);
     }
-})
-artisteLib.addEventListener("click",function(){
+    playlistLib.removeEventListener("click",playlistLibClickEvent);
+}
+playlistLib.addEventListener("click",playlistLibClickEvent);
+
+// creating event listener artist button on library section
+const artisteLibClickEvent = function(){
     buttoncrossLib.classList.remove("hidden");
     playlistLib.classList.add("hidden");
     artisteLib.classList.remove("bg-zinc-700");
@@ -206,7 +212,10 @@ artisteLib.addEventListener("click",function(){
     for(let i=0;i<(playlistLib_container_size);++i){
         Libraray.removeChild(Libraray.children[1]);
     }
-})
+    artisteLib.removeEventListener("click",artisteLibClickEvent);
+}
+artisteLib.addEventListener("click",artisteLibClickEvent);
+
 buttoncrossLib.addEventListener("click",function(){
     if(artisteLib.classList.contains("hidden")){
         artisteLib.classList.remove("hidden");
@@ -218,6 +227,7 @@ buttoncrossLib.addEventListener("click",function(){
         artistLib_container.forEach(element=>{
             Libraray.appendChild(appendAritist(element));
         })
+        playlistLib.addEventListener("click",playlistLibClickEvent);
     }
     if(playlistLib.classList.contains("hidden")){
         playlistLib.classList.remove("hidden");
@@ -233,6 +243,7 @@ buttoncrossLib.addEventListener("click",function(){
         for(let i=size-1;i>=0;--i){
             Libraray.insertBefore(queue[i],Libraray.firstChild.nextSibling.nextSibling)
         }
+        artisteLib.addEventListener("click",artisteLibClickEvent);
     }
     buttoncrossLib.classList.add("hidden");
 })

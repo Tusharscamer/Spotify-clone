@@ -1,4 +1,17 @@
+async function getLocation(){
+    function success(position){
+      console.log("Location ",position.coords.latitude);
+    }
+    function error(){
+      console.log("unable to get location");
+    }
+    const location = await navigator.geolocation.getCurrentPosition(success,error);
+}
+getLocation();
+
+
 // Here is the example of callback function
+
 console.log("this is the data by callback function")
 function getting_post(userId){
     fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
