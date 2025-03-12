@@ -1,3 +1,4 @@
+// Album based on mostly played songs 
 const container1=[
     {imgname : `https://mosaic.scdn.co/640/ab67616d00001e02b3bc99e5781905ea29096b88ab67616d00001e02c8be540885e2abcce2e56822ab67616d00001e02ce40d6d2d9df156ceebe0086ab67616d00001e02d51647f66283a44532579cf7`
      , playlistName : "Japanese" },
@@ -18,23 +19,21 @@ const container1=[
         ,playlistName :"Japanese & Anime Songs..."
     }
 ]
+
 let n=0;
 const box222=document.querySelector(".box222");
-for(let i=0;i<2;++i){
-    let odiv1=document.createElement("div");
-    for(let j=0;j<2;++j){
-        let odiv11=document.createElement("div");
+// creating element for albums 
+container1.forEach((ele)=>{  
         let odiv111=document.createElement("div");
-        let odiv112=document.createElement("div");
-        
+
         // this is for odiv111 
         let img1=document.createElement("img");
-        img1.src=container1[n].imgname;
+        img1.src=ele.imgname;
         let odiv1111=document.createElement("div");
         odiv1111.appendChild(img1);
         odiv1111.classList.add("w-12");
         let text1=document.createElement("span");
-        text1.textContent=container1[n].playlistName;
+        text1.textContent=ele.playlistName;
         text1.classList.add("text-white","text-sm","font-bold");
         let odiv1112=document.createElement("div");
         odiv1112.appendChild(text1);
@@ -43,33 +42,9 @@ for(let i=0;i<2;++i){
         odiv111.appendChild(odiv1111);
         odiv111.appendChild(odiv1112);
         odiv111.classList.add("flex","space-x-2","h-16","w-60","hover:bg-slate-700","cursor-pointer");
-         
-        ++n
-
-        // this is for odiv112
-        let img2=document.createElement("img");
-        img2.src=container1[n].imgname;
-        let odiv1121=document.createElement("div");
-        odiv1121.appendChild(img2);
-        odiv1121.classList.add("w-12");
-        let text2=document.createElement("span");
-        text2.textContent=container1[n].playlistName;
-        text2.classList.add("text-white","text-sm","font-bold");
-        let odiv1122=document.createElement("div");
-        odiv1122.appendChild(text2);
-        odiv1122.classList.add("w-40")
-        
-        odiv112.appendChild(odiv1121);
-        odiv112.appendChild(odiv1122);
-        odiv112.classList.add("flex","space-x-2" ,"w-60","h-16","hover:bg-slate-700","cursor-pointer");
-
-        ++n;
-        odiv1.appendChild(odiv111);
-        odiv1.appendChild(odiv112);
-    }
-    odiv1.classList.add("flex","space-x-2");
-    box222.appendChild(odiv1);
-}
+        box222.appendChild(odiv111);
+});
+box222.classList.add("grid","grid-cols-4")
 
 // object for "Made for Tushar Dhakad"
 const made_for_you=[
@@ -96,6 +71,7 @@ const made_for_you=[
     }
 ]
 
+// fuction to create a div for each element in the array and return it 
 function builder(element) {
     let m1=document.createElement("div");
     let img=document.createElement("img");
@@ -116,12 +92,14 @@ function builder(element) {
     return m1;
 };
 
+
 let box2232=document.querySelector(".box2232");
+// call the function for each element in the array and append the returned div to the box2232 div
 made_for_you.forEach(element=>{
     box2232.appendChild(builder(element));
 })
 
-//
+// object for "Your to mix"
 const your_to_mix=[
     {imgname :"https://seed-mix-image.spotifycdn.com/v6/img/folk_acoustic/3MuPVbFDynbq9zRTAqjRxi/en/default"
         , artists : "Max,Jury,Bob Dylan,Violetta Zironi and more"
@@ -146,7 +124,9 @@ const your_to_mix=[
     }
 ]
 
+
 let box2242=document.querySelector(".box2242");
+// call the function for each element in the array and append the returned div to the box2242 div
 your_to_mix.forEach(element=>{
     box2242.appendChild(builder(element));
 })

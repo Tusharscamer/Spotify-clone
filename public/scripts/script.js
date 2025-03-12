@@ -378,8 +378,17 @@ searchLibInput.addEventListener("input",function(){
      }
 })
 
-
-
+// recent button for library section
+const Librecent=document.querySelector(".LibRecent");
+const LibRecentOptions=document.querySelector(".LibRecentOptions");
+Librecent.addEventListener("click",function(){
+    if(LibRecentOptions.classList.contains("hidden")){
+        LibRecentOptions.classList.remove("hidden");
+    }
+    else{
+        LibRecentOptions.classList.add("hidden");
+    }
+})
 //
 let ProfileLogo=document.querySelector(".ProfileLogo");
 let UserOptions=document.querySelector(".UserOptions");
