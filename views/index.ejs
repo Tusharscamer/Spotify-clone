@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link href="/stylesheets/output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a835322af7.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-black">
+
+     <!-- Top bar -->
+    <div class="box1 mt-2 flex">
+        <!-- spotify logo  -->
+        <div class=" w-12 ml-4">
+            <img class="" src="/img/logo.png" alt="" />
+        </div>
+        <!-- home logo  -->
+        <div class="w-12 flex items-center justify-center ml-96 rounded-full bg-slate-800">
+            <img class="" id="homelogo" src="/img/homelogo.png" alt="" />
+        </div>
+        <!-- search bar Top -->
+        <i d="searchlogo" class="cursor-pointer text-white fa-solid fa-magnifying-glass relative mt-5 left-8"></i>
+        <input class="searchbutton rounded-full p-2 ps-14 w-96 text-xl bg-gray-900 text-white" type="search"
+            placeholder="What do you want to play ?" id="" />
+        <!-- install app button -->
+        <div class="flex p-3 items-center justify-center rounded-full bg-gray-900 space-x-1 ml-96">
+            <i class="text-white fa-solid fa-download"></i>
+            <p class="text-white font-bold">Install App</p>
+        </div>
+
+        <!-- profile logo  -->
+        <div class="ProfileLogo bg-blue-300 w-8 h-8 ml-20 mt-2 rounded-full flex justify-center items-center cursor-pointer">
+            <span class="text-black text-lg">T</span>
+        </div>
+        <!-- user dropdown menu -->
+        <div class="UserOptions absolute z-[9999] inset-0 translate-x-[1340px] translate-y-14 transform bg-slate-900 shadow-2xl p-1 w-44 h-60  text-white hidden" >
+            <ul class="space-y-2">
+                <li>
+                  <div class="cursor-pointer hover:bg-slate-600 w-full p-2">
+                    <span>Account</span>
+                  </div>
+                </li>
+                <li>
+                    <div class="cursor-pointer hover:bg-slate-600 w-full p-2">
+                        <span>Profile</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cursor-pointer hover:bg-slate-600 w-full p-2">
+                        <span>Upgrade to premium</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cursor-pointer hover:bg-slate-600 w-full p-2">
+                        <span>Settings</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cursor-pointer hover:bg-slate-600 w-full p-2">
+                        <span>Log out</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- middle secton  -->
+    <div class="box2 flex space-x-4 mt-2 ml-2">
+        
+        <!-- library secton  -->
+        <div class="box21 bg-gray-900 ">
+             <!-- library top static section  -->
+            <div class="box211 flex ml-2 p-2">
+                <!-- library icon + text  -->
+                <div class="flex justify-center items-center space-x-2">
+                    <!-- library icon  -->
+                    <div class="w-8">
+                        <img class="imgLib cursor-pointer " src="./img/library.png" alt="" />
+                    </div>
+                    <p class="text-white text-base">Your Library</p>
+                </div>
+                <!-- create playlist button + arrow button -->
+                <div class="ml-32">
+                    <!-- create playlist button  -->
+                    <button class="buttonPlusLib " type="button  ">
+                        <i class="pt-3 text-xl text-slate-400 fa-solid fa-plus"></i>
+                    </button>
+                    <!-- create playlist dropdown  -->
+                    <div class="createPlaylistLib absolute z-[9999] inset-0 translate-x-16 translate-y-32 transform bg-slate-900 shadow-2xl p-1 w-64 h-28  text-white hidden">
+                       <ul class="space-y-2">
+                         <li>
+                            <div class="flex justify-start items-start space-x-2 bg-slate-800 hover:bg-slate-700 cursor-pointer  w-60 p-2">
+                                <div class="">
+                                    <i class=" fa-solid fa-music"></i>
+                                </div>
+                                <div>
+                                    <span>Create a New Playlist</span>
+                                </div>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="flex justify-start items-start space-x-2 bg-slate-800  hover:bg-slate-700 cursor-pointer w-60 p-2">
+                                <div class="">
+                                    <i class="fa-regular fa-folder"></i>
+                                </div>
+                                <div>
+                                    <span>Create a New playlist Folder</span>
+                                </div>
+                            </div>
+                         </li>
+                       </ul>
+                    </div>
+                </div>
+                <!-- arrow button  -->
+                <button type="button">
+                    <i class="ml-5 pt-3 text-xl text-slate-400 fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <!-- playlist and artist section for choice  -->
+            <div class="box212 flex mt-4 relative space-x-2">
+                <!-- initially hidden button for cross to cut choice and set default  -->
+                 <div class="buttonCrossLib hidden p-2  rounded-full text-white bg-zinc-700">
+                    <button class="">
+                        <i class="  fa-solid fa-xmark"></i>
+                    </button>
+                 </div>
+                 <!-- playlist button  -->
+                <div class="playlistLib text-white   rounded-full text-sm bg-zinc-700 p-2  cursor-pointer">
+                  <p>  playlist</p>
+                </div>
+                <!-- artist button  -->
+                <div class="artisteLib text-white text-sm bg-zinc-700 rounded-full p-2 cursor-pointer">
+                    <p>artiste</p>
+                </div>
+                <!-- by you button for user created playlist  -->
+                <div class="byyouLib text-white text-base bg-zinc-700 rounded-full p-2 hidden">
+                   <p> By you</p>
+                </div>
+            </div>
+            <!-- library section  -->
+            <div class="Library mt-3 overflow-y-scroll scrollbar scrollbar-thumb-slate-600 scrollbar-track-gray-800 w-96 h-[440px] space-y-2">
+                <!-- search for playlist and artist and  check recents -->
+                <div class="LibTopBar flex w-full">
+                    <!-- search button for library -->
+                    <div class="flex">
+                        <i id="searchLibLogo"  class="text-lg cursor-pointer text-slate-400 fa-solid fa-magnifying-glass mt-3 z-10 ml-5"></i>
+                        <input class="searchLibInput searchbutton rounded-full relative ps-10 right-9  text-lg bg-gray-900 text-white hidden -z-0" type="search" placeholder="Search on Your Library" id="" />
+                    </div>
+                    <!-- recents button for library -->
+                    <div class="LibRecent text-slate-400  flex space-x-1 ml-48 justify-center items-center cursor-pointer hover:text-slate-100">
+                       <div class="">
+                         <p class="recentLib  text-lg "> Recents</p>
+                       </div>
+                        <div class="w-10">
+                            <img class="" src="./img/recents.png" alt="" />
+                        </div>
+                    </div>
+                    <!-- recents options dropdown  -->
+                    <div class="LibRecentOptions absolute z-[9999] inset-0 translate-x-[200px] translate-y-56 transform bg-slate-900 shadow-2xl p-1 w-44 h-[430px]  hidden" >
+                        <ul class="space-y-2">
+                            <li class="text-slate-300">
+                                <div class=" w-full p-2 text-sm text-bold">
+                                    <head class="">sorted by</head>
+                                </div>
+                            </li>
+
+                           <li>
+                               <ul class="space-y-2 text-white">
+                                  <li>
+                                    <div class="flex items-center cursor-pointer hover:bg-slate-600 w-full p-2  justify-between  ">
+                                        <div>
+                                            <span>Recents</span>
+                                        </div>
+                                        <div class="hidden">
+                                            <i class=" text-blue-600  fa-solid fa-check"></i>
+                                          </div>
+                                    </div>
+                                  </li>
+                                  <li>
+                                      <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex justify-between items-center2">
+                                          <div>
+                                            <span>Rectly Added</span>
+                                          </div>
+                                          <div class="hidden">
+                                            <i class=" text-blue-600  fa-solid fa-check"></i>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex justify-between items-center">
+                                          <div>
+                                            <span>Alphabetical</span>
+                                          </div>
+                                          <div class="hidden">
+                                            <i class=" text-blue-600  fa-solid fa-check"></i>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex justify-between items-center">
+                                         <div>
+                                            <span>Creator</span>
+                                         </div>
+                                         <div class="hidden">
+                                            <i class=" text-blue-600  fa-solid fa-check"></i>
+                                          </div>
+                                      </div>
+                                  </li>
+                               </ul>
+                           </li>
+
+                           <li class="text-slate-300">
+                            <div class="w-full p-2 text-sm text-bold">
+                                <head class="">view as</head>
+                            </div>
+                           </li>
+
+                           <li>
+                             <ul class="space-y-2 text-white">
+                               <li>
+                                 <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex  items-center justify-between">
+                                   <div class="flex space-x-2 items-center">
+                                    <i class="fa-solid fa-bars"></i>
+                                    <span>Compact</span>
+                                   </div>
+                                   <div class="hidden">
+                                    <i class="text-blue-600  fa-solid fa-check"></i>
+                                   </div>
+                                 </div>
+                               </li>
+                               <li>
+                                <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex  items-center justify-between">
+                                   <div class="flex space-x-2 items-center">
+                                    <i class="fa-solid fa-list"></i>
+                                    <span>List</span>
+                                   </div>
+                                   <div class="hidden">
+                                    <i class="text-blue-600  fa-solid fa-check"></i>
+                                   </div>                                    
+                                 </div>
+                               </li>
+                               <li>
+                                <div class="cursor-pointer hover:bg-slate-600 w-full p-2 flex  items-center justify-between ">
+                                    <div class="flex space-x-2 items-center">
+                                        <i class="fa-solid fa-table-cells"></i>
+                                        <span>Grid</span>
+                                    </div>
+                                    <div class="hidden">
+                                        <i class="text-blue-600  fa-solid fa-check"></i>
+                                    </div>
+                                 </div>
+                               </li>
+
+                             </ul>
+                           </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section for user playlist and liked songs and trendings  -->
+        <div class="box22 bg-gray-900 p-4 space-y-4">
+            <!-- top bar menu for all music and podcasts -->
+            <div class="box221 flex space-x-4">
+                <div class="all text-black bg-white p-2 cursor-pointer rounded-full">
+                    All
+                </div>
+                <div class="music text-white bg-gray-700 p-2 cursor-pointer rounded-full">
+                    Music
+                </div>
+                <div class="podcasts text-white bg-gray-700 p-2 cursor-pointer rounded-full">
+                    Podcasts
+                </div>
+            </div>
+            <!-- dynamic section scrollable   -->
+            <div class="overflow-y-scroll scrollbar scrollbar-thumb-slate-600 scrollbar-track-gray-800 space-y-2 h-[450px]">
+                <!-- all mostly played and liked songs with albums  -->
+                <div class="box222 space-y-2  ">
+                
+                </div>
+                <!-- made for you section  -->
+                <div class="box223 space-y-2">
+                    <!-- text  -->
+                    <div class="box2231">
+                        <h1 class="hover:underline text-2xl font-bold text-white">Made for The_Tushar_dhakad</h1>
+                    </div>
+                    <!-- dynamic section scrollable   -->
+                    <div class="box2232 flex overflow-x-scroll scrollbar scrollbar-none w-[1060px] space-x-4">
+    
+                    </div>
+                </div>
+                <!-- your top mixes section  -->
+                <div class="box224 space-y-2">
+                    <!-- text  -->
+                    <div class="box2241">
+                        <h1 class="hover:underline text-2xl font-bold text-white">Your top Mixes</h1>
+                    </div>
+                    <!-- dynamic section scrollable   -->
+                    <div class="box2242 flex overflow-x-scroll scrollbar scrollbar-none w-[1060px] space-x-4">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- currently playing song section  -->
+    <div class="flex text-white w-full justify-start gap-[460px] items-center bg-black">
+       <div class="flex space-x-3">
+            <div>
+                <img src="" alt="">
+            </div>
+            <div class="">
+                <div class="">
+                    <h2>Song Name</h2>
+                </div>
+                <div class="text-sm">
+                    <span>artiste Name</span>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <input class="rounded-full" type="checkbox" name="" id="">
+            </div>
+       </div>
+       <div class="">
+          <div class="flex space-x-6">
+             <div>
+                <i class="fa-solid fa-shuffle"></i>
+             </div>
+             <div>
+                <i class=" fa-solid fa-left-long"></i>
+             </div>
+             <div>
+                <i class=" fa-solid fa-pause"></i>
+             </div>
+             <div>
+                <i class="fa-solid fa-play"></i>
+             </div>
+             <div>
+                <i class="fa-solid fa-right-long"></i>
+             </div>
+             <div>
+                <i class="fa-solid fa-repeat"></i>
+             </div>
+          </div>
+          <div>
+            <audio  src=""></audio>
+          </div>
+       </div>
+       <div class="flex space-x-6">
+          <div>
+            <i class="fa-brands fa-square-youtube"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+          <div>
+            <i class="fa-solid fa-arrows-up-down-left-right"></i>
+          </div>
+       </div>
+    </div>
+    
+    <script src="/javascripts/All_img.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/Library.js"></script>
+</body>
+</html>

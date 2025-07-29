@@ -1,14 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./public/**/*.html",  // All HTML files inside the public folder and subfolders
-    "./public/**/*.js",    // All JS files inside the public folder and subfolders
-  ],
+  content: ["./views/**/*.ejs", "./public/javascripts/**/*.js", "./public/stylesheets/**/*.css"],
   theme: {
     extend: {},
   },
   plugins: [
     require('tailwind-scrollbar'),
   ],
-}
-
+};
